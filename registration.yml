@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://192.168.10.45:3306/authenticate?useSSL=false
+    username: developer
+    password: '%$developer321'
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  cloud:
+    config:
+      allow-override: true
+      override-system-properties: false
+
+server:
+  port: 8084
+
+time-zone: GMT+2:00
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.10.45:8082/eureka/
